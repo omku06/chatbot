@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #ff6a00, #ff1493, #8a2be2, #ff0000);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+}
+
+.chatbox {
+    width: 400px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    animation: scaleUp 1s ease-out, fadeIn 1s ease-in-out;
+}
+
+.chatbox-header {
+    background-color: #ff0000;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.chatbox-body {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Allows scrolling */
+    background: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Ensures messages are stacked top to bottom */
+    gap: 10px;
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox-footer input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.chatbox-footer button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+    background-color: #ff0000;
+}
+
+.bot-message {
+    background-color: #e4e4e4;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.user-message {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
